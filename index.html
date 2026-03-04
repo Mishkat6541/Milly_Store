@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
@@ -19,16 +19,11 @@
       <nav class="main-nav">
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="shop.html">Shop</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <a href="shop.html" class="cart-icon" aria-label="View basket">
-        <i class="fa-solid fa-basket-shopping"></i>
-        <span class="cart-count">0</span>
-      </a>
       <button class="hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -40,8 +35,10 @@
     <div class="hero-overlay"></div>
     <img src="images/unnamed - 2026-03-04T160603.051.jpg" alt="Milly Rock.uk flower stall" class="hero-img" />
     <div class="hero-content">
-      <h1>Exquisite Floral Designs for<br />Every Occasion.</h1>
-      <a href="shop.html" class="btn btn-gold">Shop Now</a>
+      <p class="hero-tagline">Welcome to MillyRock.uk</p>
+      <h1>Exquisite Floral Designs<br />for Every Occasion.</h1>
+      <p class="hero-sub">Fresh &amp; artificial arrangements — handcrafted with love</p>
+      <a href="#contact" class="btn btn-hero">Get in Touch</a>
     </div>
   </section>
 
@@ -56,7 +53,7 @@
             <img src="images/552441261_122120447864971210_3837402573384964748_n.jpg" alt="Bespoke Bouquets" />
           </div>
           <h3>Bespoke Bouquets</h3>
-          <p>Bespoke floral design to our bouquets for occasion in immituming beatths, fresh and artificial arrangement.</p>
+          <p>Unique, hand-crafted bouquets tailored to your occasion — available in both fresh and artificial flowers.</p>
         </div>
 
         <div class="service-card">
@@ -64,7 +61,7 @@
             <img src="images/591735740_122137655576971210_7893082720651500480_n.jpg" alt="Handcrafted Wreaths" />
           </div>
           <h3>Handcrafted Wreaths</h3>
-          <p>Handcraftesllian desirns with arrangements, laritits in folk ssets arranged as your wreaths.</p>
+          <p>Beautiful seasonal and year-round wreaths, lovingly handmade to brighten any door or space.</p>
         </div>
 
         <div class="service-card">
@@ -72,7 +69,7 @@
             <img src="images/594874213_122137531958971210_7305769713885055530_n.jpg" alt="Funeral Tributes" />
           </div>
           <h3>Funeral Tributes</h3>
-          <p>Funeral tributes we bunning aretsees funeral and gents feern nrect or alfaslional service.</p>
+          <p>Compassionate, dignified floral tributes crafted with care to honour and celebrate your loved ones.</p>
         </div>
 
       </div>
@@ -88,8 +85,8 @@
       <div class="stall-text">
         <h2>From Our Stall to Your Home</h2>
         <div class="gold-divider"></div>
-        <p>Our MillyRock.uk is a smilvuoar flowring hapen – fresh our sains opnorcementor fresh and artificial arrangements for colour and them and artificial wreaths for your occasion.</p>
-        <p>We are fresh and artificial arrangements, alikhor greet norangenuts. In the line to our gift shop, photo to leave our still stanil amont your Milly Rock to our home.</p>
+        <p>MillyRock.uk is a family-run floral business bringing fresh and artificial flower arrangements directly to you. Find us at our stall where we showcase a stunning range of bouquets, wreaths and seasonal creations.</p>
+        <p>Whether you're looking for a colourful gift, a lasting artificial arrangement for your home, or a heartfelt tribute, we pour love and care into every single piece we create.</p>
       </div>
     </div>
   </section>
@@ -97,20 +94,66 @@
   <!-- ========== TESTIMONIALS ========== -->
   <section class="testimonials">
     <div class="container">
-      <h2 class="section-title">Testimonials</h2>
+      <h2 class="section-title">What Our Customers Say</h2>
       <div class="gold-divider centered"></div>
-      <div class="testimonials-grid">
 
-        <div class="testimonial-card">
-          <p>"Milly Rock.uk's a professoise-mpmiknasceny growing over mos, avheward after a tatem ode weather, thdove and win the granitions in Eavery occasion."</p>
-          <cite>– Thure Ralums</cite>
+      <div class="carousel" id="testimonialCarousel" aria-label="Customer testimonials">
+        <div class="carousel-track">
+
+          <div class="testimonial-card" role="group" aria-label="Testimonial 1">
+            <div class="testimonial-card-box">
+              <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p>"I ordered a bespoke bouquet for my mum's birthday and she was absolutely blown away. The flowers were so fresh and beautifully arranged. Will definitely be ordering again!"</p>
+              <cite>– Sarah M., Derby</cite>
+            </div>
+          </div>
+
+          <div class="testimonial-card" role="group" aria-label="Testimonial 2">
+            <div class="testimonial-card-box">
+              <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p>"Milly Rock provided the most stunning floral tributes for my nan's funeral. They were caring, professional and the flowers were truly breathtaking. Thank you so much."</p>
+              <cite>– James T., Nottingham</cite>
+            </div>
+          </div>
+
+          <div class="testimonial-card" role="group" aria-label="Testimonial 3">
+            <div class="testimonial-card-box">
+              <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p>"I spotted the stall in town and bought a wreath on the spot. The quality is incredible — it still looks perfect weeks later. Fantastic value and such a lovely team!"</p>
+              <cite>– Claire H., Leicester</cite>
+            </div>
+          </div>
+
+          <div class="testimonial-card" role="group" aria-label="Testimonial 4">
+            <div class="testimonial-card-box">
+              <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p>"Ordered a bouquet for my wedding anniversary and my wife was in tears — happy ones! The roses were gorgeous and the presentation was so elegant. Highly recommend."</p>
+              <cite>– David K., Burton on Trent</cite>
+            </div>
+          </div>
+
+          <div class="testimonial-card" role="group" aria-label="Testimonial 5">
+            <div class="testimonial-card-box">
+              <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p>"I've used Milly Rock several times now and the quality never disappoints. The artificial arrangements are so realistic — perfect for around the home. Absolutely love them!"</p>
+              <cite>– Emma R., Loughborough</cite>
+            </div>
+          </div>
+
+          <div class="testimonial-card" role="group" aria-label="Testimonial 6">
+            <div class="testimonial-card-box">
+              <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p>"Saw them at the market and decided to treat myself. The bouquet was gorgeous, very fairly priced and lasted over two weeks. I'll be a regular customer for sure!"</p>
+              <cite>– Priya N., Derby</cite>
+            </div>
+          </div>
+
         </div>
 
-        <div class="testimonial-card">
-          <p>"The woming antivied MillyRock.uk indwed the home, and waknand amfaise gless more."</p>
-          <cite>– Jono Wancay</cite>
-        </div>
+        <button class="carousel-btn prev" aria-label="Previous testimonial">&#8249;</button>
+        <button class="carousel-btn next" aria-label="Next testimonial">&#8250;</button>
 
+        <div class="carousel-dots" id="carouselDots"></div>
       </div>
     </div>
   </section>

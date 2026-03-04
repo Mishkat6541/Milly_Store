@@ -59,6 +59,77 @@ window.addEventListener('scroll', () => {
     : '0 2px 8px rgba(0,0,0,0.08)';
 });
 
+// ── Testimonial Carousel ──
+(function () {
+  const track   = document.querySelector('.carousel-track');
+  if (!track) return;
+
+  const cards   = Array.from(track.querySelectorAll('.testimonial-card'));
+  const dotsWrap = document.getElementById('carouselDots');
+  const perView = () => window.innerWidth <= 700 ? 1 : 2;
+
+  let current = 0;
+  let autoTimer;
+
+  // Build dots
+  const totalSlides = () => Math.ceil(cards.length / perView());
+  function buildDots() {
+    dotsWrap.innerHTML = '';
+    for (let i = 0; i < totalSlides(); i++) {
+      const d = document.createElement('button');
+      d.className = 'dot' + (i === current ? ' active' : '');
+      d.setAttribute('aria-label', `Go to slide ${i + 1}`);
+      d.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(d);
+    }
+  }
+
+  function updateDots() {
+    dotsWrap.querySelectorAll('.dot').forEach((d, i) => {
+      d.classList.toggle('active', i === current);
+    });
+  }
+
+  function goTo(index) {
+    const total = totalSlides();
+    current = (index + total) % total;
+    const offset = current * perView() * (100 / cards.length);
+    track.style.transform = `translateX(-${offset}%)`;
+    updateDots();
+  }
+
+  function startAuto() {
+    autoTimer = setInterval(() => goTo(current + 1), 4500);
+  }
+  function resetAuto() {
+    clearInterval(autoTimer);
+    startAuto();
+  }
+
+  // Set card widths
+  function setWidths() {
+    const pv = perView();
+    cards.forEach(c => c.style.minWidth = `${100 / cards.length}%`);
+    buildDots();
+    goTo(0);
+  }
+
+  document.querySelector('.carousel-btn.prev').addEventListener('click', () => { goTo(current - 1); resetAuto(); });
+  document.querySelector('.carousel-btn.next').addEventListener('click', () => { goTo(current + 1); resetAuto(); });
+
+  // Touch/swipe support
+  let touchStartX = 0;
+  track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) { goTo(diff > 0 ? current + 1 : current - 1); resetAuto(); }
+  });
+
+  window.addEventListener('resize', setWidths);
+  setWidths();
+  startAuto();
+})();
+
 // ── Lazy / fallback for missing images: show a soft placeholder ──
 document.querySelectorAll('img').forEach(img => {
   img.addEventListener('error', function () {
