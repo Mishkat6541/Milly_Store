@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop – Milly Rock.uk</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .shop-hero {
+      background: var(--mid-bg);
+      text-align: center;
+      padding: 3.5rem 1.5rem;
+    }
+    .shop-hero h1 { font-size: 2.2rem; margin-bottom: 0.5rem; }
+    .shop-hero p  { color: #666; }
+
+    .products {
+      padding: 4rem 0;
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .product-card {
+      background: var(--white);
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.09);
+      overflow: hidden;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.14);
+    }
+    .product-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      background: #e8ddd4;
+    }
+    .product-info {
+      padding: 1rem 1.2rem 1.4rem;
+    }
+    .product-info h3 { font-size: 1rem; margin-bottom: 0.3rem; }
+    .product-info .price {
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 0.8rem;
+    }
+    .product-info .btn {
+      width: 100%;
+      text-align: center;
+      padding: 0.6rem 1rem;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 700px) {
+      .products-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .products-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">Milly <span>Rock</span>.uk</a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html" class="active">Shop</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="shop.html" class="cart-icon" aria-label="View basket">
+        <i class="fa-solid fa-basket-shopping"></i>
+        <span class="cart-count">0</span>
+      </a>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- SHOP HERO -->
+  <div class="shop-hero">
+    <h1>Our Shop</h1>
+    <p>Fresh &amp; artificial floral arrangements for every occasion</p>
+  </div>
+
+  <!-- PRODUCTS -->
+  <section class="products">
+    <div class="container">
+      <div class="products-grid" id="productsGrid">
+
+        <!-- Each product card – replace images when ready -->
+        <div class="product-card">
+          <img class="product-img" src="images/552441261_122120447864971210_3837402573384964748_n.jpg" alt="Bespoke Bouquet" />
+          <div class="product-info">
+            <h3>Bespoke Bouquet</h3>
+            <div class="price">£35.00</div>
+            <button class="btn btn-gold add-to-cart" data-name="Bespoke Bouquet" data-price="35">Add to Basket</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img class="product-img" src="images/591735740_122137655576971210_7893082720651500480_n.jpg" alt="Heart Wreath" />
+          <div class="product-info">
+            <h3>Heart Wreath</h3>
+            <div class="price">£45.00</div>
+            <button class="btn btn-gold add-to-cart" data-name="Heart Wreath" data-price="45">Add to Basket</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img class="product-img" src="images/594874213_122137531958971210_7305769713885055530_n.jpg" alt="Luxury Wreath" />
+          <div class="product-info">
+            <h3>Luxury Wreath</h3>
+            <div class="price">£65.00</div>
+            <button class="btn btn-gold add-to-cart" data-name="Luxury Wreath" data-price="65">Add to Basket</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img class="product-img" src="images/552441261_122120447864971210_3837402573384964748_n.jpg" alt="Pink Rose Bouquet" />
+          <div class="product-info">
+            <h3>Pink Rose Bouquet</h3>
+            <div class="price">£28.00</div>
+            <button class="btn btn-gold add-to-cart" data-name="Pink Rose Bouquet" data-price="28">Add to Basket</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img class="product-img" src="images/591735740_122137655576971210_7893082720651500480_n.jpg" alt="Handcrafted Wreath" />
+          <div class="product-info">
+            <h3>Handcrafted Wreath</h3>
+            <div class="price">£42.00</div>
+            <button class="btn btn-gold add-to-cart" data-name="Handcrafted Wreath" data-price="42">Add to Basket</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img class="product-img" src="images/594874213_122137531958971210_7305769713885055530_n.jpg" alt="Funeral Tribute Wreath" />
+          <div class="product-info">
+            <h3>Funeral Tribute Wreath</h3>
+            <div class="price">£80.00</div>
+            <button class="btn btn-gold add-to-cart" data-name="Funeral Tribute Wreath" data-price="80">Add to Basket</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (minimal) -->
+  <footer class="contact-footer" id="contact">
+    <div class="footer-bottom" style="margin-top:0; border-top:none;">
+      <p>&copy; <span id="year"></span> MillyRock.uk. All rights reserved.</p>
+      <p>Website designed &amp; developed by <a href="https://www.maztechdesigns.co.uk/" target="_blank" rel="noopener" title="Web Design by MazTech Designs">MazTech Designs</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Simple cart counter (localStorage-backed)
+    let cart = JSON.parse(localStorage.getItem('mrCart') || '[]');
+    updateCartCount();
+
+    document.querySelectorAll('.add-to-cart').forEach(btn => {
+      btn.addEventListener('click', () => {
+        cart.push({ name: btn.dataset.name, price: parseFloat(btn.dataset.price) });
+        localStorage.setItem('mrCart', JSON.stringify(cart));
+        updateCartCount();
+        btn.textContent = 'Added!';
+        setTimeout(() => btn.textContent = 'Add to Basket', 1400);
+      });
+    });
+
+    function updateCartCount() {
+      document.querySelectorAll('.cart-count').forEach(el => {
+        el.textContent = cart.length;
+      });
+    }
+  </script>
+</body>
+</html>
