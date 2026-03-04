@@ -93,8 +93,9 @@ window.addEventListener('scroll', () => {
   function goTo(index) {
     const total = totalSlides();
     current = (index + total) % total;
-    const offset = current * perView() * (100 / cards.length);
-    track.style.transform = `translateX(-${offset}%)`;
+    // Translate by containerWidth per page (not % of track, which is much wider)
+    const containerWidth = track.parentElement.offsetWidth;
+    track.style.transform = `translateX(-${current * containerWidth}px)`;
     updateDots();
   }
 
@@ -106,10 +107,9 @@ window.addEventListener('scroll', () => {
     startAuto();
   }
 
-  // Set card widths
+  // Set card widths — each card fills 1/perView of the container
   function setWidths() {
-    const pv = perView();
-    cards.forEach(c => c.style.minWidth = `${100 / cards.length}%`);
+    cards.forEach(c => c.style.minWidth = `${100 / perView()}%`);
     buildDots();
     goTo(0);
   }
